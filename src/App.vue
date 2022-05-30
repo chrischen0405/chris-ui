@@ -1,5 +1,6 @@
 <template>
     <div id="app">
+        <chris-button></chris-button>
     </div>
 </template>
 
