@@ -1,6 +1,8 @@
+import ChrisAlert from './chris-alert'
 import ChrisButton from './chris-button'
 
 const componentMap = [
+    ChrisAlert,
     ChrisButton
 ]
 

@@ -17,6 +17,21 @@
                 Danger
             </chris-button>
         </div>
+        <chris-button @click="openAlert">OPEN ALERT</chris-button>
+        <chris-alert
+                ref="chrisAlert"
+                type="primary"
+                @confirm="confirmAlert">
+            <template #header>
+                This is header
+            </template>
+            <template #content>
+                This is content
+            </template>
+            <template #btnText>
+                Confirm
+            </template>
+        </chris-alert>
     </div>
 </template>
 
@@ -27,6 +42,12 @@ export default {
     methods: {
         onClick (type) {
             console.log('click!', type)
+        },
+        openAlert () {
+            this.$refs.chrisAlert.openAlert()
+        },
+        confirmAlert () {
+            console.log('confirm alert')
         }
     }
 }
@@ -42,6 +63,7 @@ export default {
 .btn-list {
     display: flex;
     flex-direction: row;
+    margin-bottom: 15px;
     .chris-button {
         margin: 0 15px;
     }
