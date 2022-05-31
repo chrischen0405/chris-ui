@@ -1,4 +1,4 @@
-import ChrisButton from './ChrisButton'
+import ChrisButton from './chris-button'
 
 const componentMap = [
     ChrisButton
