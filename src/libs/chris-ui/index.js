@@ -1,17 +1,17 @@
 import ChrisAlert from './chris-alert'
 import ChrisButton from './chris-button'
+import ChrisInput from './chris-input'
 
 const componentMap = [
     ChrisAlert,
-    ChrisButton
+    ChrisButton,
+    ChrisInput
 ]
 
 let ChrisUI = {}
 
 ChrisUI.install = function (Vue, options) {
     const { btnShadow } = options ? options : {}
-
-    console.log(Vue, options, btnShadow)
 
     Vue.prototype.$btnShadow = !!btnShadow
 

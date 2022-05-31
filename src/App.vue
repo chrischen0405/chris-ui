@@ -18,6 +18,7 @@
             </chris-button>
         </div>
         <chris-button @click="openAlert">OPEN ALERT</chris-button>
+        <chris-input v-model="inputText" placeholder="test"></chris-input>
         <chris-alert
                 ref="chrisAlert"
                 type="primary"
@@ -36,9 +37,13 @@
 </template>
 
 <script>
-
 export default {
     name: 'App',
+    data () {
+        return {
+            inputText: 'test'
+        }
+    },
     methods: {
         onClick (type) {
             console.log('click!', type)
