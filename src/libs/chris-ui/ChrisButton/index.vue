@@ -1,7 +1,13 @@
 <template>
     <button
             @click="emitClick"
-            :class="['chris-button', `btn-${ type }`]">
+            class="chris-button"
+            :class="[
+                 `btn-${ type }`,
+                  {
+                      'btn-shadow': $btnShadow
+                  }
+                 ]">
         <slot></slot>
     </button>
 </template>
@@ -66,6 +72,10 @@ export default {
     &.btn-danger {
         background-color: $--color-danger;
         color: $--color-white;
+    }
+
+    &.btn-shadow {
+        box-shadow: 1px 3px 5px $--color-shadow;
     }
 }
 </style>

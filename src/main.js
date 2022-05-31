@@ -5,7 +5,9 @@ import ChrisUI from './libs/chris-ui'
 
 Vue.config.productionTip = false
 
-Vue.use(ChrisUI)
+Vue.use(ChrisUI, {
+    btnShadow: true
+})
 
 new Vue({
     render: h => h(App)
