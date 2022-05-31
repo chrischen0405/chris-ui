@@ -1,25 +1,27 @@
 <template>
-    <div
-            class="chris-alert"
-            v-show="visible"
-            :class="[
+    <transition name="fade">
+        <div
+                class="chris-alert"
+                v-show="visible"
+                :class="[
                 `alert-${ type }`
             ]">
-        <div class="chris-alert-inner">
-            <header>
-                <h1><slot name="header"></slot></h1>
-            </header>
-            <div class="content">
-                <p><slot name="content"></slot></p>
-                <chris-button
-                        class="alert-btn"
-                        :type="type"
-                        @click="closeAlert">
-                    <slot name="btnText"></slot>
-                </chris-button>
+            <div class="chris-alert-inner">
+                <header>
+                    <h1><slot name="header"></slot></h1>
+                </header>
+                <div class="content">
+                    <p><slot name="content"></slot></p>
+                    <chris-button
+                            class="alert-btn"
+                            :type="type"
+                            @click="closeAlert">
+                        <slot name="btnText"></slot>
+                    </chris-button>
+                </div>
             </div>
         </div>
-    </div>
+    </transition>
 </template>
 
 <script>
@@ -43,7 +45,7 @@ export default {
     },
     data () {
         return {
-            visible: true
+            visible: false
         }
     },
     methods: {
@@ -127,5 +129,15 @@ export default {
             background-color: $--color-danger;
         }
     }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .3s;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
 }
 </style>
